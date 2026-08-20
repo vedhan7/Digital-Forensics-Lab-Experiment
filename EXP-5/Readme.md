@@ -2,7 +2,7 @@
 
 ## Execution Steps
 
-### 1. Autopsy splash screen, "Done loading modules 
+### 1. Autopsy splash screen, "Done loading modules"
 Opening the initial `.cap` file reveals the raw network traffic, including standard TCP handshakes and HTTP connections.
 ![Initial Capture](01_autopsy_installation.png)
 
