@@ -21,13 +21,13 @@ From the disk menu, select **[ Analyse ]** to scan the current partition structu
 ### 3. Missing Boot Signature (0xAA55)
 During the creation of the bootloader, ensuring standard compatibility (like the Multiboot 1 header) is crucial. A common error during early development is the absence of the Master Boot Record (MBR) boot signature. If TestDisk returns the error `Partition sector doesn't have the endmark 0xAA55`, the binary is missing the standard `55 AA` magic number at the end of the boot sector (byte 510 and 511).
 
-![Missing Endmark Error](docs/assets/03-testdisk-missing-boot-signature.png)
+![Missing Endmark Error](03-testdisk-missing-boot-signature.png)
 *TestDisk successfully identifying the missing 0xAA55 boot signature.*
 
 ### 4. Search Results & Resolution
 If a Quick Search yields **No partition found or selected for recovery**, it confirms the image is entirely raw or the partition table is entirely unwritten. 
 
-![No Partition Found](docs/assets/04-testdisk-no-partition-found.png)
+![No Partition Found](04-testdisk-no-partition-found.png)
 *Final result indicating no recoverable standard partitions.*
 
 **Next Steps:**
