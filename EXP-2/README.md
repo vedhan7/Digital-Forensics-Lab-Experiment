@@ -9,7 +9,7 @@ If the system image fails to boot or is unrecognized, follow these steps to anal
 ### 1. Select Partition Table Type
 Launch TestDisk and select the virtual disk (`/dev/sda` in this environment). Because the image is being built from scratch and may not yet have a standard partition table written to it, select **[None] Non partitioned media**.
 
-![Select Partition Type](docs/assets/01-testdisk-partition-type-none.png)
+![Select Partition Type](01-testdisk-partition-type-none.png)
 *Selecting the appropriate media type for the raw virtual disk.*
 
 ### 2. Initiate Disk Analysis
