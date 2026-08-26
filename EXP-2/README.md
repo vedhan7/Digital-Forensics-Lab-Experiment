@@ -15,7 +15,7 @@ Launch TestDisk and select the virtual disk (`/dev/sda` in this environment). Be
 ### 2. Initiate Disk Analysis
 From the disk menu, select **[ Analyse ]** to scan the current partition structure and search for any lost or misaligned partitions. Correct disk geometry is critical here, but TestDisk will handle standard 512-byte sector sizes for the virtual image.
 
-![Analyse Structure](docs/assets/02-testdisk-analyse-structure.png)
+![Analyse Structure](02-testdisk-analyse-structure.png)
 *Initiating the analysis process on the 407 MB virtual disk.*
 
 ### 3. Missing Boot Signature (0xAA55)
