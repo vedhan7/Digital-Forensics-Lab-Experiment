@@ -33,3 +33,4 @@ If a Quick Search yields **No partition found or selected for recovery**, it con
 **Next Steps:**
 *   Verify the linker script to ensure the bootloader header and signature are placed at the correct memory offset.
 *   Recompile the system image to include the necessary `0xAA55` endmark before the next QEMU test run.
+ 
