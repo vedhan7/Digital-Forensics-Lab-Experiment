@@ -48,7 +48,7 @@ To streamline forensic acquisition workflows, a specific partition (`F:\`) is ta
 
 | Evidence Item Information | Image Source & Destination Setup | Configuring Destination & Fragment Size |
 | :---: | :---: | :---: |
-| ![Evidence Info](Screenshot%202026-08-26%2333245.png) | ![Destination Setup](Screenshot%202026-08-26%2333344.png) | ![Destination Config](Screenshot%202026-08-26%2333428.png) |
+| ![Evidence Info](88833748-2944-419c-9390-08511e262ad1.png) | ![Destination Setup](d2a025ad-616c-4375-90aa-8fed9a8b7b98.png) | ![Destination Config](f5333571-9f07-47bc-9a24-45b9ed53cd3c.png) |
 | *Figure 2.1: Case and examiner metadata.* | *Figure 2.2: Source partition selection (`F:\`).* | *Figure 2.3: Destination path and options.* |
 
 ---
@@ -59,7 +59,7 @@ To ensure court admissibility and data integrity, FTK Imager automatically calcu
 
 | Verification Result |
 | :---: |
-| ![Verify Result](Verify_result.png) |
+| ![Verify Result](89a7f44f-54ee-42d2-8ac9-06cb88c466cb.png) |
 | *Figure 3.1: Drive/Image Verify Results showing successful MD5 and SHA1 matches.* |
 
 ### Checksum Summary:
