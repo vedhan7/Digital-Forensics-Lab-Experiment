@@ -2,73 +2,80 @@
 
 **Course / Lab:** Digital Forensics Laboratory  
 **Experiment:** Evidence Acquisition Using AccessData FTK Imager[cite: 2]  
+**Candidate Name:** Sanjeevi Kumar S  
 **Date:** August 27, 2026  
 
 ---
 
 ## 📋 Overview
-Forensic Toolkit (FTK) Imager is a widely used computer forensics software product designed for acquiring and analyzing digital evidence[cite: 2]. To maintain the integrity of evidence during investigations, FTK Imager provides reliable methods for capturing both volatile and non-volatile memory without altering the original source files[cite: 2, 3].
+Forensic Toolkit (FTK) Imager is an industry-standard computer forensics software product used for acquiring and analyzing digital evidence securely[cite: 2]. This experiment demonstrates the methodology for acquiring both volatile memory (RAM) and non-volatile storage (logical partitions) while preserving evidence integrity through cryptographic hashing.
 
 ---
 
 ## 🛠️ Experiment Objectives
-1. Acquire volatile memory (RAM) along with pagefile data from a live system.
-2. Acquire non-volatile memory (disk images or specific logical partitions) using safe acquisition workflows.
-3. Verify evidence integrity using cryptographic hash values (MD5 and SHA1)[cite: 3].
+1. Capture volatile memory and system states from a live environment.
+2. Acquire non-volatile evidence via logical drive/partition imaging to optimize laboratory time[cite: 3].
+3. Verify data integrity by computing and validating MD5 and SHA1 checksums[cite: 3].
 
 ---
 
 ## Part 1: Acquiring Volatile Memory (RAM)
 
-Volatile memory contains active processes, network connections, and temporary data that disappear when a system is powered off.
+Volatile memory captures running processes, active network sockets, and temporary data.
 
 ### Steps:
-1. Launch **AccessData FTK Imager** and click on the **Capture Memory** icon on the toolbar[cite: 3].
-2. Choose your **Destination path** and enter a filename for the memory dump (e.g., `memdump.mem`)[cite: 3].
-3. Check the options to **Include pagefile** (to capture `pagefile.sys` data from the C drive) and **Create AD1 file** if required[cite: 3].
-4. Click **Capture Memory** to begin the process and wait for completion[cite: 3].
+1. Launch the memory acquisition utility (e.g., WinPmem/FTK memory capture module) with administrator privileges[cite: 3].
+2. Define the output destination file (`.raw` / `.mem`) and monitor the live memory dumping progress[cite: 3].
+3. Allow the driver to complete the memory transfer and verify driver unloading.
 
-![Capture Memory Toolbar](docs/assets/ftk-step1-memory-icon.png)  
-*Figure 1: Navigating to the volatile memory capture icon.*
-
-![Memory Progress](docs/assets/ftk-step2-memory-progress.png)  
-*Figure 2: Memory capture progress and completion.*
+| Capturing Memory in Progress | Memory Capture Completed |
+| :---: | :---: |
+| ![Capturing Memory](Capturing_mem.png) | ![Completed](Completed.png) |
+| *Figure 1.1: Live memory dumping execution.* | *Figure 1.2: Successful memory dump completion.* |
 
 ---
 
 ## Part 2: Acquiring Non-Volatile Memory (Logical Drive / Partition)
 
-To save storage space and time during laboratory workflows, investigators can choose to acquire a single logical partition rather than an entire physical hard drive[cite: 3].
+To streamline forensic acquisition workflows, a specific partition (`F:\`) is targeted instead of the entire physical disk.
 
 ### Steps:
-1. Open FTK Imager and click on the **Create Disk Image** icon[cite: 3].
-2. Select **Logical Drive** as the source evidence type and pick your target partition (e.g., `D:` or `E:`)[cite: 3].
+1. Open FTK Imager and initiate the **Create Disk Image** wizard[cite: 3].
+2. Select **Logical Drive** as the source type and choose the target partition (`F:\`)[cite: 3].
 3. Fill in the **Evidence Item Information** (Case Number, Evidence Number, Unique Description, Examiner, and Notes)[cite: 3].
-4. Set your **Image Destination folder**, filename, and set the **Image Fragment Size** to `0` for a single unified file[cite: 3].
-5. Check **Verify images after they are created** to automatically calculate and verify checksums[cite: 3].
-6. Click **Start** to initiate the acquisition[cite: 3].
+4. Configure the destination folder (`E:\`), image filename (`EXP`), fragment size, and enable **Verify images after they are created**[cite: 3].
+5. Click **Start** to begin imaging[cite: 3].
 
-![Create Disk Image Source](docs/assets/ftk-step3-select-source.png)  
-*Figure 3: Selecting source evidence type (Logical Drive).*
-
-![Image Destination](docs/assets/ftk-step4-destination.png)  
-*Figure 4: Configuring destination path and verification settings.*
+| Evidence Item Information | Image Source & Destination Setup | Configuring Destination & Fragment Size |
+| :---: | :---: | :---: |
+| ![Evidence Info](Screenshot%202026-08-26%2333245.png) | ![Destination Setup](Screenshot%202026-08-26%2333344.png) | ![Destination Config](Screenshot%202026-08-26%2333428.png) |
+| *Figure 2.1: Case and examiner metadata.* | *Figure 2.2: Source partition selection (`F:\`).* | *Figure 2.3: Destination path and options.* |
 
 ---
 
 ## 🔍 Verification & Cryptographic Hashes
 
-To ensure that the acquired evidence has not been tampered with or corrupted, FTK Imager automatically computes cryptographic hashes upon completion[cite: 3].
+To ensure court admissibility and data integrity, FTK Imager automatically calculates cryptographic hashes upon completion and cross-verifies them against the report hash[cite: 3].
 
+| Verification Result |
+| :---: |
+| ![Verify Result](Verify_result.png) |
+| *Figure 3.1: Drive/Image Verify Results showing successful MD5 and SHA1 matches.* |
+
+### Checksum Summary:
 ```text
-Image Type: Raw (dd)
-Source data size: 9968 MB
-Sector count: 2041446
+Image Type: Raw / Logical Drive Image (Result.001)
+Sector Count: 31506432
 
-[Computed Hashes]
-MD5 checksum:    043d83c157ac850bcf03e0285932fbf1
-SHA1 checksum:   12713a645e6bbd0baebf9af9e3634fb11a559641
+[MD5 Hash]
+Computed hash:    1f8957e55573455d076e144a74afef4
+Report hash:      1f8957e55573455d076e144a74afef4
+Verify result:    Match
 
-Image Verification Results:
-MD5 checksum:    043d83c157ac850bcf03e0285932fbf1 : verified
-SHA1 checksum:   12713a645e6bbd0baebf9af9e3634fb11a559641 : verified
+[SHA1 Hash]
+Computed hash:    613f621a072747853feb89ed81700c749c2cc7b1
+Report hash:      613f621a072747853feb89ed81700c749c2cc7b1
+Verify result:    Match
+
+[Bad Blocks List]
+Bad block(s) in image: No bad blocks found in image
