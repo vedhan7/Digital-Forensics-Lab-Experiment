@@ -25,7 +25,7 @@ To inspect raw email headers, trace server routing hops, and analyze authenticat
 *   **Subject:** Your card, your rules: Customize your transaction limits on YONO SBI
 *   **Message-ID:** `wvumeo17872509055276640@communications.sbi.co.in`
 
-![Gmail Raw Header Extraction](image_5aaeff.png)
+![Gmail Raw Header Extraction](gmail-raw-header.png)
 
 **2. MHA Routing and Authentication Analysis (Google Admin Toolbox)**
 *   **Authentication Check:** 
@@ -37,7 +37,7 @@ To inspect raw email headers, trace server routing hops, and analyze authenticat
     *   **Hop 2 & 3 (Internal Routing):** Internal Google SMTP routing to the final inbox.
 *   **Delivery Time:** The total transit time from the sender to the inbox was exactly 1 second, indicating no suspicious routing delays or rerouting through unauthorized third-party servers.
 
-![Google Admin Toolbox MHA](image_5ac4e6.png)
+![Google Admin Toolbox MHA](mha-toolbox-result.png)
 
 **CONCLUSION:**
 No anomalies, time discrepancies, or domain mismatches were found. The `From` domain matches the cryptographic `Message-ID` domain. All authentication protocols (SPF, DKIM, DMARC) passed successfully. The email is a legitimate, authorized communication and is **not spoofed**.
