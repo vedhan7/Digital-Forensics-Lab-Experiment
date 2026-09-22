@@ -37,8 +37,6 @@ C:\platform-tools> adb devices
 C:\platform-tools> adb install aflogical-ose.apk
 ```
 
-![ADB Device Connection and APK Installation](01_adb_device_connection.jpg)
-*Figure 7.1: The `adb devices` command confirms the Android device (emulator-5554) is connected and recognized. The APK installation completes with "Success" status, deploying the forensic extraction tool onto the device.*
 
 ---
 
@@ -46,8 +44,6 @@ C:\platform-tools> adb install aflogical-ose.apk
 
 Launch the AFLogical OSE application on the connected Android device. The app presents checkboxes for each extractable data category. Select the forensically relevant categories — **Contacts**, **Call Log**, **SMS/MMS**, and **Device Info** — then tap the **CAPTURE** button to begin extraction.
 
-![AFLogical OSE Data Category Selection](02_aflogical_data_selection.jpg)
-*Figure 7.2: The AFLogical OSE interface on the Android device displays available data categories. Contacts, Call Log, SMS/MMS, and Device Info are selected for extraction. The green "CAPTURE" button initiates the data collection process.*
 
 ---
 
@@ -59,8 +55,6 @@ After extraction completes, the data is stored as `.csv` files on the device's s
 C:\platform-tools> adb pull /sdcard/aflogical/ C:\Forensic_Projects\Case_2023\
 ```
 
-![Extracted CSV Data in Excel](03_extracted_csv_data.jpg)
-*Figure 7.3: The extracted contact data displayed in Microsoft Excel shows structured forensic evidence including names, phone numbers, email addresses, and contact types. Multiple tabs (contacts.csv, call_log.csv) enable comprehensive review of all extracted data categories.*
 
 ---
 
@@ -89,3 +83,12 @@ This removes the forensic tool from the target device, ensuring no artifacts are
 
 ## ✅ Result
 Android forensic data was successfully extracted using AFLogical OSE. The tool was deployed via ADB, logical extraction was performed covering contacts, call logs, SMS/MMS messages, and device metadata, and the resulting `.csv` files were transferred to the forensic workstation for analysis. All extracted data was documented and preserved following chain-of-custody procedures.
+
+---
+
+## ??? Execution Screenshots
+
+| Image | Image |
+| :---: | :---: |
+| ![Picture1](Picture1.png) | ![Picture2](Picture2.png) |
+| ![Picture3](Picture3.png) | ![Picture4](Picture4.png) |

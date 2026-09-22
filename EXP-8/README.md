@@ -35,8 +35,6 @@ Run StegExpose against a directory containing suspect images. The tool analyzes 
 User@Computer:~/stegexpose$ java -jar StegExpose.jar test_images/
 ```
 
-![StegExpose Batch Analysis](01_stegexpose_batch_analysis.jpg)
-*Figure 8.1: StegExpose batch analysis of five images in the `test_images/` directory. Two images (`suspicious_cat.png` with score 0.47 and `hidden_message.png` with score 0.62) are flagged as suspicious, while three images are classified as clean with scores below the 0.20 threshold.*
 
 ---
 
@@ -58,8 +56,6 @@ For images flagged as suspicious, a detailed forensic analysis is performed. Ste
 - **Chi-Square Attack** — Identifies deviations from expected statistical distributions in pixel values
 - **Sample Pairs** — Analyzes paired pixel relationships to detect embedding artifacts
 
-![Detailed Steganography Detection Results](02_stegexpose_detection_result.jpg)
-*Figure 8.2: Comprehensive forensic analysis of a suspect image. The terminal confirms steganography detection with a 0.62 suspect score (HIGH probability). The statistical panel displays RS Analysis, Chi-Square Attack, and Sample Pairs graphs — all indicating significant anomalies consistent with LSB steganographic embedding.*
 
 ---
 
@@ -80,3 +76,11 @@ java -jar StegExpose.jar --help
 
 ## ✅ Result
 Steganographic analysis was successfully performed using StegExpose on a set of sample images. The tool identified two images with suspect scores exceeding the detection threshold (0.47 and 0.62), correctly classifying them as containing hidden data. The multi-method statistical approach (RS Analysis, Chi-Square Attack, Sample Pairs) provided corroborating evidence, demonstrating the effectiveness of automated steganalysis in digital forensic investigations.
+
+---
+
+## ??? Execution Screenshots
+
+| Image | Image |
+| :---: | :---: |
+| ![1_Verifying](1_Verifying.png) | |

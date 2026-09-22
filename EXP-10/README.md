@@ -59,8 +59,6 @@ The CodeBrowser interface is divided into three primary panels:
 | **Listing (Disassembly)** (Center) | View x86 assembly instructions with addresses, opcodes, and cross-references |
 | **Decompiler** (Right) | View auto-generated C-like pseudocode for the selected function |
 
-![Ghidra CodeBrowser Interface](01_ghidra_code_browser.jpg)
-*Figure 10.1: Ghidra's CodeBrowser analyzing `malware_sample.exe`. The left panel shows the Program Tree with `.text` and `.data` sections and the Symbol Tree listing identified functions (`_main`, `sub_401000`). The center Disassembly Listing displays x86 assembly instructions including a suspicious `cmp eax, 0xdeadbeef` anti-debugging check and a `call malicious_routine`. The right Decompiler panel shows the equivalent C pseudocode, revealing conditional logic that branches to a malicious routine. The Console at the bottom confirms "WARNING: Potential anti-debugging code detected."*
 
 ---
 
@@ -143,3 +141,13 @@ This decompiled output reveals:
 
 ## ✅ Result
 The suspect binary was successfully disassembled and analyzed using Ghidra. The auto-analysis identified critical functions, and the Decompiler revealed C-like pseudocode exposing anti-debugging checks (magic value `0xdeadbeef`), conditional execution of a malicious payload, and decoy benign behavior. Suspicious API imports (process injection, registry manipulation, network communication) were catalogued as Indicators of Compromise (IOCs). The analysis demonstrates Ghidra's effectiveness as a primary tool for static malware analysis in digital forensic investigations.
+
+---
+
+## ??? Execution Screenshots
+
+| Image | Image |
+| :---: | :---: |
+| ![Picture1](Picture1.png) | ![Picture2](Picture2.png) |
+| ![Picture3](Picture3.png) | ![Picture4](Picture4.png) |
+| ![Picture5](Picture5.png) | |

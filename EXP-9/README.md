@@ -40,8 +40,6 @@ Run `procexp64.exe` as Administrator to obtain full visibility of all system pro
 | **Green** | Newly spawned processes (flash briefly) |
 | **Red** | Processes that have just terminated |
 
-![Process Explorer Tree View](01_process_explorer_tree.jpg)
-*Figure 9.1: Process Explorer displaying the full process tree. System processes (System, smss.exe, csrss.exe), user processes (explorer.exe, chrome.exe), and service host instances (svchost.exe) are visible. The color coding immediately highlights process categories — note the suspicious svchost.exe instance (PID 8912) consuming 14.8% CPU marked in red.*
 
 ---
 
@@ -53,8 +51,6 @@ Right-click any suspicious process and select **Properties** to examine critical
 - **Verified Signer** — Legitimate software from trusted vendors (Microsoft, Adobe, etc.) will have valid digital signatures. "Unable to verify" or missing signatures indicate potentially malicious binaries.
 - **Parent Process** — Unexpected parent-child relationships (e.g., `svchost.exe` spawned by `explorer.exe` instead of `services.exe`) suggest process injection or masquerading.
 
-![Suspicious Process Properties](02_suspicious_process_properties.jpg)
-*Figure 9.2: The Properties dialog for a suspicious process reveals critical red flags: the image path points to `C:\Users\temp\AppData\Local\Temp\randomname123.exe` (not a standard system directory), the verified signer shows "Unable to verify" in red, and the Digital Signatures section confirms "No valid signatures found".*
 
 ---
 
@@ -66,8 +62,6 @@ The VirusTotal column displays detection ratios:
 - **0/72** — Clean, no antivirus engines detected malware
 - **23/72** — Critical alert: 23 out of 72 engines flagged this process as malicious
 
-![VirusTotal Integration Results](03_virustotal_integration.jpg)
-*Figure 9.3: Process Explorer with VirusTotal integration active. Most system processes show clean results (0/72). The process `cryptolock.exe` (PID 4152) is flagged with 23/72 detections — the expanded tooltip reveals multiple AV engines identifying it as ransomware variants including "Trojan-Ransom.Win32.WannaCry" (Kaspersky), "Win32/Filecoder.WannaCryptor.D" (ESET-NOD32), and "Ransom.Win32.WANNACRY.SM" (TrendMicro).*
 
 ---
 
@@ -98,3 +92,13 @@ When a malicious process is confirmed:
 
 ## ✅ Result
 Process Explorer was successfully used to identify suspicious processes on a Windows system. The process tree analysis revealed anomalous behavior, the Properties inspection uncovered unsigned executables running from temporary directories, and the VirusTotal integration confirmed malware presence with a 23/72 detection ratio identifying ransomware variants. The identified processes were terminated and their source files quarantined for further forensic analysis.
+
+---
+
+## ??? Execution Screenshots
+
+| Image | Image |
+| :---: | :---: |
+| ![1](1.png) | ![2](2.png) |
+| ![3](3.png) | ![4](4.png) |
+| ![5](5.png) | ![6](6.png) |

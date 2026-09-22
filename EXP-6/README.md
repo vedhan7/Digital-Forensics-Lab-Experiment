@@ -35,8 +35,6 @@ The `mmls` command displays the partition table of a disk image, showing the sta
 analyst@forensics:~$ mmls disk_image.dd
 ```
 
-![Partition Layout Analysis](01_mmls_partition_layout.jpg)
-*Figure 6.1: The `mmls` output reveals the DOS partition table structure, identifying NTFS, Linux, and Swap partitions along with unallocated regions.*
 
 ---
 
@@ -48,8 +46,6 @@ Using the partition offset obtained from `mmls`, we inspect the target file syst
 analyst@forensics:~$ fsstat -o 63 disk_image.dd
 ```
 
-![File System Statistics](02_fsstat_filesystem_info.jpg)
-*Figure 6.2: The `fsstat` output confirms an NTFS file system with 4096-byte clusters, 512-byte sectors, and detailed MFT metadata including total and free entries.*
 
 ---
 
@@ -61,8 +57,6 @@ The `fls` command recursively lists all files and directories within the specifi
 analyst@forensics:~$ fls -o 63 -r disk_image.dd
 ```
 
-![File Listing with Deleted Files](03_fls_file_listing.jpg)
-*Figure 6.3: The `fls` output displays the file system contents. Entries prefixed with `*` (e.g., `deleted_evidence.doc`, `secret_notes.txt`) indicate deleted files available for recovery.*
 
 ---
 
@@ -76,8 +70,6 @@ analyst@forensics:~$ file recovered_file.doc
 analyst@forensics:~$ md5sum recovered_file.doc
 ```
 
-![Deleted File Recovery](04_icat_file_recovery.jpg)
-*Figure 6.4: The `icat` command successfully recovers the deleted file. The `file` command confirms it as a valid Microsoft Word document, and `md5sum` generates a cryptographic hash for chain-of-custody documentation.*
 
 ---
 
@@ -94,3 +86,14 @@ analyst@forensics:~$ md5sum recovered_file.doc
 
 ## ✅ Result
 Disk forensics was successfully performed using The Sleuth Kit tools. The partition layout was analyzed with `mmls`, file system structure was examined with `fsstat`, all files (including deleted ones marked with `*`) were listed using `fls`, and a deleted file was recovered intact using `icat` with its integrity verified via MD5 hashing.
+
+---
+
+## ??? Execution Screenshots
+
+| Image | Image |
+| :---: | :---: |
+| ![1](1.png) | ![2](2.png) |
+| ![3](3.png) | ![4](4.png) |
+| ![5](5.png) | ![6](6.png) |
+| ![7](7.png) | |
