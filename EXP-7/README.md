@@ -1,94 +1,79 @@
-# Ex. No 7: Android Data Extraction Using AFLogical OSE
+# Ex. No. 7: Android Logical Acquisition Using AFLogical OSE
 
 **Course / Lab:** Digital Forensics Laboratory  
-**Experiment:** Android Data Extraction Using AFLogical OSE  
-**Candidate Name:** Sanjeevi Kumar S  
-**Date:** September 22, 2026  
+**Experiment:** Android Logical Acquisition Using AFLogical OSE  
+**Status:** Procedure and analysis record
 
 ---
 
-## 📋 Overview
-AFLogical OSE (Open Source Edition) is a forensic tool designed for logical extraction of data from Android devices. Unlike physical acquisition methods that create bit-for-bit copies of storage, logical extraction pulls structured data such as contacts, call logs, SMS/MMS messages, and device information through the Android content provider framework. This experiment demonstrates the complete workflow of connecting an Android device via ADB, deploying AFLogical OSE, extracting forensic data, and analyzing the results.
+## Overview
 
----
+AFLogical OSE performs logical acquisition from Android content providers. It can collect structured artifacts such as contacts, call logs, SMS/MMS records, and device information. Because a logical acquisition is not a physical image, the report must identify what was selected, what was collected, and any data unavailable through the operating-system interface.
 
-## 🛠️ Experiment Objectives
-1. Set up the forensic environment with ADB (Android Debug Bridge) and verify device connectivity.
-2. Deploy and install the AFLogical OSE APK onto the target Android device.
-3. Perform logical data extraction of contacts, call logs, SMS/MMS, and device metadata.
-4. Transfer extracted `.csv` files to the forensic workstation and analyze the data.
+## Objectives
 
----
+1. Confirm an authorised Android test device is visible through ADB.
+2. Install AFLogical OSE and select relevant data providers.
+3. Capture logical data without altering the original export.
+4. Transfer the export to the workstation and validate the received files.
 
-## 🖥️ Software and Tools Required
-- **AFLogical OSE** — Downloaded from the official GitHub repository
-- **Android Debug Bridge (ADB)** — Part of Android SDK Platform Tools
-- **Java Runtime Environment (JRE)**
-- An Android device or emulator with **USB Debugging** enabled
+## Tools Required
 
----
+- AFLogical OSE APK
+- Android Debug Bridge (ADB)
+- An authorised Android device or emulator with USB debugging enabled
+- An isolated forensic workstation
 
-## Step 1: Connect the Android Device via ADB
+## Step 1: Verify the device and install the acquisition utility
 
-After enabling USB Debugging on the Android device (Settings → Developer Options → USB Debugging), connect it to the forensic workstation via USB. Verify the connection using `adb devices`, then install the AFLogical OSE APK.
+Enable USB debugging only on an authorised device. Confirm the device serial returned by ADB, then record it in the acquisition notes.
 
-```
-C:\platform-tools> adb devices
-C:\platform-tools> adb install aflogical-ose.apk
+```text
+adb devices
+adb install aflogical-ose.apk
 ```
 
+![AFLogical OSE logical acquisition interface and ADB terminal](https://www.infosecinstitute.com/globalassets/wpcontentmedia/031616_1042_androidfore23.webp)
 
----
+*Figure 7.1: A real AFLogical OSE interface alongside the ADB workflow. The selected providers determine the scope of the logical acquisition.*
 
-## Step 2: Select Data Categories for Extraction
+## Step 2: Select providers and capture data
 
-Launch the AFLogical OSE application on the connected Android device. The app presents checkboxes for each extractable data category. Select the forensically relevant categories — **Contacts**, **Call Log**, **SMS/MMS**, and **Device Info** — then tap the **CAPTURE** button to begin extraction.
+Open AFLogical OSE on the device. Select only the data types authorised by the lab scenario, such as Contacts, Call Log, SMS/MMS, and Device Information, then start the capture. Note the tool version, device state, date/time settings, and selected providers.
 
+## Step 3: Transfer the extraction to the workstation
 
----
+Export the acquisition directory to a case-specific folder. Do not edit the original extraction. Create a separate working copy for spreadsheet review or parsing.
 
-## Step 3: Transfer and Analyze Extracted Data
-
-After extraction completes, the data is stored as `.csv` files on the device's storage (typically in `/sdcard/aflogical/`). Use `adb pull` to transfer the files to the forensic workstation, then open them in a spreadsheet application for analysis.
-
-```
-C:\platform-tools> adb pull /sdcard/aflogical/ C:\Forensic_Projects\Case_2023\
-```
-
-
----
-
-## 📊 Data Categories Extracted
-
-| Category | File Format | Key Fields |
-| :--- | :--- | :--- |
-| Contacts | `contacts.csv` | Name, Phone Number, Email, Type |
-| Call Log | `call_log.csv` | Number, Duration, Date, Type (Incoming/Outgoing) |
-| SMS/MMS | `sms.csv` | Address, Body, Date, Read Status |
-| Device Info | `info.csv` | Device Model, OS Version, IMEI, Serial Number |
-
----
-
-## Step 4: Cleanup and Evidence Preservation
-
-After confirming all data has been successfully transferred and verified:
-
-```
-C:\platform-tools> adb uninstall com.viaforensics.android.aflogical
+```text
+adb pull /sdcard/forensics/ C:\Forensic_Cases\Case001\logical-acquisition\
+Get-FileHash C:\Forensic_Cases\Case001\logical-acquisition\* -Algorithm SHA256
 ```
 
-This removes the forensic tool from the target device, ensuring no artifacts are left behind that could compromise the evidence or alert the device owner.
+![AFLogical OSE data pulled from an Android device](https://www.infosecinstitute.com/globalassets/wpcontentmedia/031616_1042_androidfore25.webp)
 
----
+*Figure 7.2: A live logical-acquisition transfer showing CSV and XML artifacts being copied to the forensic workstation.*
 
-## ✅ Result
-Android forensic data was successfully extracted using AFLogical OSE. The tool was deployed via ADB, logical extraction was performed covering contacts, call logs, SMS/MMS messages, and device metadata, and the resulting `.csv` files were transferred to the forensic workstation for analysis. All extracted data was documented and preserved following chain-of-custody procedures.
+## Data Categories
 
----
+| Category | Typical export | Example fields to review |
+| --- | --- | --- |
+| Contacts | CSV | Name, number, email, account type |
+| Call logs | CSV | Number, direction, duration, timestamp |
+| SMS/MMS | CSV | Address, message body, timestamp, read state |
+| Device information | XML or CSV | Model, OS version, device identifiers |
 
-## ??? Execution Screenshots
+## Evidence Handling Notes
 
-| Image | Image |
-| :---: | :---: |
-| ![Picture1](Picture1.png) | ![Picture2](Picture2.png) |
-| ![Picture3](Picture3.png) | ![Picture4](Picture4.png) |
+- Keep the original device connected only for the shortest necessary period.
+- Preserve the unmodified acquisition folder and record hashes for each exported file.
+- Use local time, time zone, tool version, and device serial in the chain-of-custody note.
+- Treat absent records as limitations of logical acquisition rather than proof that no data existed.
+
+## Result
+
+The workflow produces a structured, hashable logical export suitable for review while clearly documenting collection scope and limitations.
+
+## Visual source
+
+Figures 7.1 and 7.2 are independently published AFLogical OSE acquisition captures from [Infosec's Android logical acquisition guide](https://www.infosecinstitute.com/resources/digital-forensics/android-forensic-logical-acquisition/). They are tool-interface references, not evidence from a lab device.
