@@ -31,6 +31,11 @@ Process Explorer is an advanced process monitoring tool from Microsoft Sysintern
 
 Run `procexp64.exe` as Administrator to obtain full visibility of all system processes. The main window displays a hierarchical tree view where child processes are nested under their parent processes.
 
+| Process Tree | Nested Processes |
+| :---: | :---: |
+| ![1](1.png) | ![2](2.png) |
+| *Figure 1.1: Examining the process tree.* | *Figure 1.2: Child processes.* |
+
 ### 🎨 Color-Coded Process Categories:
 | Color | Meaning |
 | :--- | :--- |
@@ -51,8 +56,13 @@ Right-click any suspicious process and select **Properties** to examine critical
 - **Verified Signer** — Legitimate software from trusted vendors (Microsoft, Adobe, etc.) will have valid digital signatures. "Unable to verify" or missing signatures indicate potentially malicious binaries.
 - **Parent Process** — Unexpected parent-child relationships (e.g., `svchost.exe` spawned by `explorer.exe` instead of `services.exe`) suggest process injection or masquerading.
 
+| Suspicious Properties | Signature Verification |
+| :---: | :---: |
+| ![3](3.png) | ![4](4.png) |
+| *Figure 2.1: Inspecting suspicious process properties.* | *Figure 2.2: Verifying image path and signatures.* |
 
 ---
+
 
 ## Step 3: VirusTotal Integration for Malware Detection
 
@@ -62,8 +72,13 @@ The VirusTotal column displays detection ratios:
 - **0/72** — Clean, no antivirus engines detected malware
 - **23/72** — Critical alert: 23 out of 72 engines flagged this process as malicious
 
+| VirusTotal Scan | Detection Results |
+| :---: | :---: |
+| ![5](5.png) | ![6](6.png) |
+| *Figure 3.1: VirusTotal integration.* | *Figure 3.2: Detection ratios.* |
 
 ---
+
 
 ## 🔍 Key Indicators of Suspicious Processes
 
@@ -94,11 +109,3 @@ When a malicious process is confirmed:
 Process Explorer was successfully used to identify suspicious processes on a Windows system. The process tree analysis revealed anomalous behavior, the Properties inspection uncovered unsigned executables running from temporary directories, and the VirusTotal integration confirmed malware presence with a 23/72 detection ratio identifying ransomware variants. The identified processes were terminated and their source files quarantined for further forensic analysis.
 
 ---
-
-## ??? Execution Screenshots
-
-| Image | Image |
-| :---: | :---: |
-| ![1](1.png) | ![2](2.png) |
-| ![3](3.png) | ![4](4.png) |
-| ![5](5.png) | ![6](6.png) |

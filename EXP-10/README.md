@@ -40,7 +40,13 @@ Ghidra is a free, open-source software reverse engineering (SRE) framework devel
 3. Ghidra auto-detects the file format (e.g., **Portable Executable (PE)**), architecture (**x86:LE:32:default**), and compiler.
 4. Accept the import summary and proceed to the **CodeBrowser** for analysis.
 
+| Project Creation |
+| :---: |
+| ![Picture1](Picture1.png) |
+| *Figure 1.1: Creating project and importing binary.* |
+
 ---
+
 
 ## Step 2: Auto-Analysis and Code Browser
 
@@ -59,8 +65,13 @@ The CodeBrowser interface is divided into three primary panels:
 | **Listing (Disassembly)** (Center) | View x86 assembly instructions with addresses, opcodes, and cross-references |
 | **Decompiler** (Right) | View auto-generated C-like pseudocode for the selected function |
 
+| Auto-Analysis | CodeBrowser Interface |
+| :---: | :---: |
+| ![Picture2](Picture2.png) | ![Picture3](Picture3.png) |
+| *Figure 2.1: Auto-analysis in CodeBrowser.* | *Figure 2.2: Cross-referencing.* |
 
 ---
+
 
 ## Step 3: Function Analysis — Identifying Malicious Behavior
 
@@ -89,7 +100,13 @@ Review the binary's imported Windows API functions via **Window → Symbol Table
 **3. Control Flow Graph Analysis**
 Use **Window → Function Graph** to visualize the execution flow of suspicious functions. Branch conditions, loops, and conditional jumps reveal the program's decision-making logic.
 
+| Function Analysis |
+| :---: |
+| ![Picture4](Picture4.png) |
+| *Figure 3.1: Function analysis and string extraction.* |
+
 ---
+
 
 ## Step 4: Decompiler Analysis
 
@@ -117,7 +134,13 @@ This decompiled output reveals:
 - Conditional branching that executes `malicious_routine()` only when the check passes
 - A benign decoy path (`printf`) to mislead static analysis
 
+| Decompiler View |
+| :---: |
+| ![Picture5](Picture5.png) |
+| *Figure 4.1: Decompiler analysis of malicious behavior.* |
+
 ---
+
 
 ## Step 5: Documenting Findings
 
@@ -143,11 +166,3 @@ This decompiled output reveals:
 The suspect binary was successfully disassembled and analyzed using Ghidra. The auto-analysis identified critical functions, and the Decompiler revealed C-like pseudocode exposing anti-debugging checks (magic value `0xdeadbeef`), conditional execution of a malicious payload, and decoy benign behavior. Suspicious API imports (process injection, registry manipulation, network communication) were catalogued as Indicators of Compromise (IOCs). The analysis demonstrates Ghidra's effectiveness as a primary tool for static malware analysis in digital forensic investigations.
 
 ---
-
-## ??? Execution Screenshots
-
-| Image | Image |
-| :---: | :---: |
-| ![Picture1](Picture1.png) | ![Picture2](Picture2.png) |
-| ![Picture3](Picture3.png) | ![Picture4](Picture4.png) |
-| ![Picture5](Picture5.png) | |

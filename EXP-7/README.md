@@ -37,12 +37,22 @@ C:\platform-tools> adb devices
 C:\platform-tools> adb install aflogical-ose.apk
 ```
 
+| Device Connection |
+| :---: |
+| ![Picture1](Picture1.png) |
+| *Figure 1.1: Connecting device via ADB.* |
+
 
 ---
 
 ## Step 2: Select Data Categories for Extraction
 
 Launch the AFLogical OSE application on the connected Android device. The app presents checkboxes for each extractable data category. Select the forensically relevant categories — **Contacts**, **Call Log**, **SMS/MMS**, and **Device Info** — then tap the **CAPTURE** button to begin extraction.
+
+| Data Selection | Extraction Progress |
+| :---: | :---: |
+| ![Picture2](Picture2.png) | ![Picture3](Picture3.png) |
+| *Figure 2.1: Selecting data categories.* | *Figure 2.2: Starting extraction.* |
 
 
 ---
@@ -54,6 +64,11 @@ After extraction completes, the data is stored as `.csv` files on the device's s
 ```
 C:\platform-tools> adb pull /sdcard/aflogical/ C:\Forensic_Projects\Case_2023\
 ```
+
+| Data Transfer |
+| :---: |
+| ![Picture4](Picture4.png) |
+| *Figure 3.1: Transferring and analyzing extracted data.* |
 
 
 ---
@@ -85,10 +100,3 @@ This removes the forensic tool from the target device, ensuring no artifacts are
 Android forensic data was successfully extracted using AFLogical OSE. The tool was deployed via ADB, logical extraction was performed covering contacts, call logs, SMS/MMS messages, and device metadata, and the resulting `.csv` files were transferred to the forensic workstation for analysis. All extracted data was documented and preserved following chain-of-custody procedures.
 
 ---
-
-## ??? Execution Screenshots
-
-| Image | Image |
-| :---: | :---: |
-| ![Picture1](Picture1.png) | ![Picture2](Picture2.png) |
-| ![Picture3](Picture3.png) | ![Picture4](Picture4.png) |

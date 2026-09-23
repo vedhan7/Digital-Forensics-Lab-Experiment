@@ -35,6 +35,11 @@ The `mmls` command displays the partition table of a disk image, showing the sta
 analyst@forensics:~$ mmls disk_image.dd
 ```
 
+| Analyzing Partition Layout | Partition Layout Result |
+| :---: | :---: |
+| ![1](1.png) | ![2](2.png) |
+| *Figure 1.1: mmls execution.* | *Figure 1.2: Partition details.* |
+
 
 ---
 
@@ -46,6 +51,11 @@ Using the partition offset obtained from `mmls`, we inspect the target file syst
 analyst@forensics:~$ fsstat -o 63 disk_image.dd
 ```
 
+| Examining File System | File System Details |
+| :---: | :---: |
+| ![3](3.png) | ![4](4.png) |
+| *Figure 2.1: fsstat execution.* | *Figure 2.2: File system details.* |
+
 
 ---
 
@@ -56,6 +66,11 @@ The `fls` command recursively lists all files and directories within the specifi
 ```bash
 analyst@forensics:~$ fls -o 63 -r disk_image.dd
 ```
+
+| Listing Files | Deleted Files |
+| :---: | :---: |
+| ![5](5.png) | ![6](6.png) |
+| *Figure 3.1: fls execution.* | *Figure 3.2: Deleted files list.* |
 
 
 ---
@@ -69,6 +84,11 @@ analyst@forensics:~$ icat -o 63 disk_image.dd 28 > recovered_file.doc
 analyst@forensics:~$ file recovered_file.doc
 analyst@forensics:~$ md5sum recovered_file.doc
 ```
+
+| Recovering File |
+| :---: |
+| ![7](7.png) |
+| *Figure 4.1: Recovering deleted file with icat.* |
 
 
 ---
@@ -88,12 +108,3 @@ analyst@forensics:~$ md5sum recovered_file.doc
 Disk forensics was successfully performed using The Sleuth Kit tools. The partition layout was analyzed with `mmls`, file system structure was examined with `fsstat`, all files (including deleted ones marked with `*`) were listed using `fls`, and a deleted file was recovered intact using `icat` with its integrity verified via MD5 hashing.
 
 ---
-
-## ??? Execution Screenshots
-
-| Image | Image |
-| :---: | :---: |
-| ![1](1.png) | ![2](2.png) |
-| ![3](3.png) | ![4](4.png) |
-| ![5](5.png) | ![6](6.png) |
-| ![7](7.png) | |

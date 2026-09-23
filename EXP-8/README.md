@@ -35,6 +35,11 @@ Run StegExpose against a directory containing suspect images. The tool analyzes 
 User@Computer:~/stegexpose$ java -jar StegExpose.jar test_images/
 ```
 
+| Batch Analysis |
+| :---: |
+| ![1_Verifying](1_Verifying.png) |
+| *Figure 1.1: Batch analysis using StegExpose.* |
+
 
 ---
 
@@ -78,9 +83,3 @@ java -jar StegExpose.jar --help
 Steganographic analysis was successfully performed using StegExpose on a set of sample images. The tool identified two images with suspect scores exceeding the detection threshold (0.47 and 0.62), correctly classifying them as containing hidden data. The multi-method statistical approach (RS Analysis, Chi-Square Attack, Sample Pairs) provided corroborating evidence, demonstrating the effectiveness of automated steganalysis in digital forensic investigations.
 
 ---
-
-## ??? Execution Screenshots
-
-| Image | Image |
-| :---: | :---: |
-| ![1_Verifying](1_Verifying.png) | |
