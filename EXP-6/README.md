@@ -1,10 +1,4 @@
 # Ex. No 6: Disk Forensics Using The Sleuth Kit (TSK)
-
-**Course / Lab:** Digital Forensics Laboratory  
-**Experiment:** Disk Forensics Using The Sleuth Kit (TSK)  
-**Candidate Name:** Sanjeevi Kumar S  
-**Date:** September 22, 2026  
-
 ---
 
 ## 📋 Overview
