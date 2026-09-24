@@ -1,10 +1,5 @@
 # Ex. No 9: Identifying Suspicious Processes Using Process Explorer
 
-**Course / Lab:** Digital Forensics Laboratory  
-**Experiment:** Identifying Suspicious Processes Using Process Explorer  
-**Candidate Name:** Sanjeevi Kumar S  
-**Date:** September 22, 2026  
-
 ---
 
 ## 📋 Overview
