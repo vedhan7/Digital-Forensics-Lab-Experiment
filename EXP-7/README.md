@@ -1,10 +1,5 @@
 # Ex. No 7: Android Data Extraction Using AFLogical OSE
 
-**Course / Lab:** Digital Forensics Laboratory  
-**Experiment:** Android Data Extraction Using AFLogical OSE  
-**Candidate Name:** Sanjeevi Kumar S  
-**Date:** September 22, 2026  
-
 ---
 
 ## 📋 Overview
