@@ -61,10 +61,10 @@ The `fls` command recursively lists all files and directories within the specifi
 analyst@forensics:~$ fls -o 63 -r disk_image.dd
 ```
 
-| Listing Files | Deleted Files |
+| Listing Files 
 | :---: | :---: |
-| ![5](5.png) | ![6](6.png) |
-| *Figure 3.1: fls execution.* | *Figure 3.2: Deleted files list.* |
+| ![5](5.png) 
+| *Figure 3.1: fls execution.* 
 
 
 ---
