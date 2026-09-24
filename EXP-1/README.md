@@ -53,14 +53,6 @@ To streamline forensic acquisition workflows, a specific partition (`F:\`) is ta
 
 ---
 
-## 🔍 Verification & Cryptographic Hashes
-
-To ensure court admissibility and data integrity, FTK Imager automatically calculates cryptographic hashes upon completion and cross-verifies them against the report hash[cite: 3].
-
-| Verification Result |
-| :---: |
-| ![Verify Result](89a7f44f-54ee-42d2-8ac9-06cb88c466cb.png) |
-| *Figure 3.1: Drive/Image Verify Results showing successful MD5 and SHA1 matches.* |
 
 ### Checksum Summary:
 ```text
