@@ -48,7 +48,7 @@ To streamline forensic acquisition workflows, a specific partition (`F:\`) is ta
 
 | Evidence Item Information | Image Source & Destination Setup | Configuring Destination & Fragment Size |
 | :---: | :---: | :---: |
-| ![Evidence Info](Evidence.png) | ![Destination Setup](Destination_Setup.png) | ![Destination Config](f5333571-9f07-47bc-9a24-45b9ed53cd3c.png) |
+| ![Evidence Info](Evidence.png) | ![Destination Setup](Destination_Setup.png) | ![Destination Config](Destination_Config.png) |
 | *Figure 2.1: Case and examiner metadata.* | *Figure 2.2: Source partition selection (`F:\`).* | *Figure 2.3: Destination path and options.* |
 
 ---
