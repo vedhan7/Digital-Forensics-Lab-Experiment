@@ -28,9 +28,9 @@ Volatile memory captures running processes, active network sockets, and temporar
 2. Define the output destination file (`.raw` / `.mem`) and monitor the live memory dumping progress[cite: 3].
 3. Allow the driver to complete the memory transfer and verify driver unloading.
 
-| Capturing Memory in Progress | Memory Capture Completed |
+ Memory Capture Completed |
 | :---: | :---: |
-| ![Capturing Memory](Capturing_mem.png) | ![Completed](Completed.png) |
+| ![Completed](Completed.png) |
 | *Figure 1.1: Live memory dumping execution.* | *Figure 1.2: Successful memory dump completion.* |
 
 ---
