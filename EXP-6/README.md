@@ -63,7 +63,7 @@ analyst@forensics:~$ fls -o 63 -r disk_image.dd
 
 | Listing Files 
 | :---: | :---: |
-| ![5](5.png) 
+| ![5](image231.png) 
 | *Figure 3.1: fls execution.* 
 
 
