@@ -1,10 +1,5 @@
 # Ex. No 8: Steganography Detection Using StegExpose
 
-**Course / Lab:** Digital Forensics Laboratory  
-**Experiment:** Steganography Detection Using StegExpose  
-**Candidate Name:** Sanjeevi Kumar S  
-**Date:** September 22, 2026  
-
 ---
 
 ## 📋 Overview
