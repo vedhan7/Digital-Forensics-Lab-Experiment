@@ -53,7 +53,7 @@ analyst@forensics:~$ fsstat -o 63 disk_image.dd
 
 ---
 
-## Step 3: List Files (Including Deleted) with `fls`
+## Step 3: List Files 
 
 The `fls` command recursively lists all files and directories within the specified partition. Deleted files are marked with an asterisk (`*`), making them immediately identifiable for recovery.
 
