@@ -1,10 +1,5 @@
 # Ex. No 10: Malware Disassembly and Analysis Using Ghidra
 
-**Course / Lab:** Digital Forensics Laboratory  
-**Experiment:** Malware Disassembly and Analysis Using Ghidra  
-**Candidate Name:** Sanjeevi Kumar S  
-**Date:** September 22, 2026  
-
 ---
 
 ## 📋 Overview
